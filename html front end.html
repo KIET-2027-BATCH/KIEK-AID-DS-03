@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories Burnt Prediction | Login & Signup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+        h1 {
+            color: #ff7e5f;
+            margin-bottom: 10px;
+        }
+        .toggle-btns {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .toggle-btn {
+            width: 48%;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background: #ff7e5f;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .toggle-btn:hover {
+            background: #e76a50;
+        }
+        form {
+            display: none;
+        }
+        .active-form {
+            display: block;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #ff7e5f;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e76a50;
+        }
+        p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        a {
+            color: #ff7e5f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calories Burnt Prediction</h1>
+        <div class="toggle-btns">
+            <button class="toggle-btn" onclick="showForm('login')">Login</button>
+            <button class="toggle-btn" onclick="showForm('signup')">Signup</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form" class="active-form">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showForm('signup')">Signup</a></p>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signup-form">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Signup</button>
+            <p>Already have an account? <a href="#" onclick="showForm('login')">Login</a></p>
+        </form>
+    </div>
+
+    <script>
+        function showForm(formType) {
+            document.getElementById('login-form').classList.remove('active-form');
+            document.getElementById('signup-form').classList.remove('active-form');
+
+            if (formType === 'login') {
+                document.getElementById('login-form').classList.add('active-form');
+            } else {
+                document.getElementById('signup-form').classList.add('active-form');
+            }
+        }
+    </script>
+
+</body>
+</html>
